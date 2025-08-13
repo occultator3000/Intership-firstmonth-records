@@ -6,7 +6,7 @@
 
 ​	Android Studio新建项目时选择一个Activity模板作为默认MainActivity，先选择Empty Activity作为开始。接着，Minimum SDK指的是本项目所支持的最小安卓SDK，点击“Help me choose”会出现如下界面帮助选择合适的安卓最小SDK版本：
 
-![截屏2025-08-12 11.17.52](/Users/pupu/Library/Application Support/typora-user-images/截屏2025-08-12 11.17.52.png)
+![help me choose](https://github.com/occultator3000/Intership-firstmonth-records/blob/main/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/help%20me%20choose.png)
 
 ​	其中CUMULATIVE DISTRIBUTION表示如果支持该安卓版本以上设备，则预估能支持安卓设备占所有安卓设备的百分比。可见Minimum SDK越小所能支持设备越多，但没有必要一味追求支持更多设备，这需要根据一定的市场调查与经验来决定。
 
@@ -95,7 +95,7 @@ dependencies {
 
 可以使用`adb --help`查看命令
 
-![截屏2025-08-12 12.02.33](/Users/pupu/Desktop/截屏2025-08-12 12.02.33.png)
+
 
 
 

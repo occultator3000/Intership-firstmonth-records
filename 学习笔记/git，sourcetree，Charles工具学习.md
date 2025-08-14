@@ -192,29 +192,39 @@ git submodule	# 管理包含其他 Git 仓库的项目
 1.首先将手机和电脑连接同一局域网（Wi-Fi），手机的主机IP设置成电脑的主机ip，端口设置成8888
 
 手机打开浏览器,charles看到已经成功连接上charles
-![]()
+
+![连接手机](https://github.com/occultator3000/Intership-firstmonth-records/blob/main/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/charles%E8%BF%9E%E6%8E%A5%E6%89%8B%E6%9C%BA.png)
 
 2.将Charles设置成系统的代理服务器。
-![]()
+
+![设置代理](https://github.com/occultator3000/Intership-firstmonth-records/blob/main/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/Charles%E8%AE%BE%E7%BD%AE%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1%E4%BB%A3%E7%90%86.png)
 
 3.对网络请求进行过滤，只监控向指定目录服务器上发送的请求。
-![]()
+
 
 在主界面的中部的 Filter 栏中填入需要过滤出来的关键字。例如我们的服务器的地址是：[http://baidu.com](http://baidu.com/) , 那么只需要在 Filter 栏中填入 要筛选的地址 即可。
-![]()
+
+![过滤网络](https://github.com/occultator3000/Intership-firstmonth-records/blob/main/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E8%BF%87%E6%BB%A4%E7%BD%91%E7%BB%9C.png)
+
 
 4.Charels 设置 Proxy
 
 Proxy -> SSL Proxying Settings...勾选Enable SSL Proxying，点击Add
 Host设置要抓取的https接口，比如想抓：https://www.baidu.com/（当Host为 *，默认抓取全部https请求 ）
-![]()
+
+![设置抓包接口](https://github.com/occultator3000/Intership-firstmonth-records/blob/main/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86.png)
+
 **安装 Charles 证书（抓 HTTPS 必须）**
 
 （1）电脑上安装证书
 
 - 打开 `Help → SSL Proxying → Install Charles Root Certificate`
 - 安装到系统信任（Mac Keychain / Windows 受信任证书）
-![]()
+  
+![安装证书](https://github.com/occultator3000/Intership-firstmonth-records/blob/main/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E5%AE%89%E8%A3%85%E8%AF%81%E4%B9%A6.png)
+
+![信任](https://github.com/occultator3000/Intership-firstmonth-records/blob/main/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E4%BF%A1%E4%BB%BBCharles.png)
+
 （2）手机上安装证书
 
 - 手机上浏览器访问：`chls.pro/ssl`
@@ -228,7 +238,7 @@ Host设置要抓取的https接口，比如想抓：https://www.baidu.com/（当H
 
 模拟慢速网络或者高延迟的网络，以测试在移动网络下，应用的表现是否正常，在 Charles 的菜单上，选择 “Proxy”–>“Throttle Setting” 项，在之后弹出的对话框中，我们可以勾选上 “Enable Throttling”（节流调节），并且可以设置 Throttle Preset 的类型。
 
-![]()
+![模拟慢速网络](https://github.com/occultator3000/Intership-firstmonth-records/blob/main/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%85%A2%E9%80%9F%E7%BD%91%E7%BB%9C.png)
 
 6.修改网络请求内容
 
@@ -236,11 +246,10 @@ Host设置要抓取的https接口，比如想抓：https://www.baidu.com/（当H
 
 使用 Charles 的 Repeat 功能来简单地测试服务器的并发处理能力，方法如下。
 
-
+![compose网络](https://github.com/occultator3000/Intership-firstmonth-records/blob/main/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E7%BC%96%E8%BE%91%E7%BD%91%E7%BB%9C.png)
 
 在想打压的网络请求上（POST 或 GET 请求均可）右击，然后选择 「Repeat Advanced」菜单项，设置repeat次数即可
 
-![]()
 
 7.修改服务器返回内容
 
@@ -273,6 +282,7 @@ Rewrite功能适合对某一类网络请求进行一些正则替换，以达到�
 在右侧Location栏点击Add，在弹出的Edit Location对话框中，填入相关参数，最后点击OK
 
 接着，在右侧Rules栏点击Add，在弹出的Rewrite Rule对话框中，填入相关参数，最后点击OK
-![]()
+
+![rewrite](https://github.com/occultator3000/Intership-firstmonth-records/blob/main/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/rewrite.png)
 
 

@@ -187,3 +187,92 @@ git submodule	# 管理包含其他 Git 仓库的项目
 - Map 功能适合长期地将某一些请求重定向到另一个网络地址或本地文件。
 - Rewrite 功能适合对网络请求进行一些正则替换。
 - Breakpoints 功能适合做一些临时性的修改。
+使用：
+
+1.首先将手机和电脑连接同一局域网（Wi-Fi），手机的主机IP设置成电脑的主机ip，端口设置成8888
+
+手机打开浏览器,charles看到已经成功连接上charles
+![]()
+
+2.将Charles设置成系统的代理服务器。
+![]()
+
+3.对网络请求进行过滤，只监控向指定目录服务器上发送的请求。
+![]()
+
+在主界面的中部的 Filter 栏中填入需要过滤出来的关键字。例如我们的服务器的地址是：[http://baidu.com](http://baidu.com/) , 那么只需要在 Filter 栏中填入 要筛选的地址 即可。
+![]()
+
+4.Charels 设置 Proxy
+
+Proxy -> SSL Proxying Settings...勾选Enable SSL Proxying，点击Add
+Host设置要抓取的https接口，比如想抓：https://www.baidu.com/（当Host为 *，默认抓取全部https请求 ）
+![]()
+**安装 Charles 证书（抓 HTTPS 必须）**
+
+（1）电脑上安装证书
+
+- 打开 `Help → SSL Proxying → Install Charles Root Certificate`
+- 安装到系统信任（Mac Keychain / Windows 受信任证书）
+![]()
+（2）手机上安装证书
+
+- 手机上浏览器访问：`chls.pro/ssl`
+- 下载证书并安装
+- **iOS 特别步骤**：
+  - 设置 → 通用 → 关于本机 → 证书信任设置 → 信任 Charles 证书
+- **Android 特别步骤**：
+  - 安装到用户证书（某些新版本 Android 对第三方证书有限制）
+
+5.模拟慢速网络
+
+模拟慢速网络或者高延迟的网络，以测试在移动网络下，应用的表现是否正常，在 Charles 的菜单上，选择 “Proxy”–>“Throttle Setting” 项，在之后弹出的对话框中，我们可以勾选上 “Enable Throttling”（节流调节），并且可以设置 Throttle Preset 的类型。
+
+![]()
+
+6.修改网络请求内容
+
+有些时候为了调试服务器的接口，需要反复尝试不同参数的网络请求。Charles 可以方便地提供网络请求的修改和重发功能。只需要在以往的网络请求上点击右键，选择 “Compose”，即可创建一个可编辑的网络请求。
+
+使用 Charles 的 Repeat 功能来简单地测试服务器的并发处理能力，方法如下。
+
+
+
+在想打压的网络请求上（POST 或 GET 请求均可）右击，然后选择 「Repeat Advanced」菜单项，设置repeat次数即可
+
+![]()
+
+7.修改服务器返回内容
+
+想让服务器返回一些指定的内容，方便调试一些特殊情况。例如列表页面为空的情况，数据异常的情况，部分耗时的网络请求超时的情况等。
+
+根据具体的需求，Charles 提供了 Map 功能、 Rewrite 功能以及 Breakpoints 功能，都可以达到修改服务器返回内容的目的。这三者在功能上的差异是：
+Map 功能适合长期地将某一些请求重定向到另一个网络地址或本地文件。
+
+Rewrite 功能适合对网络请求进行一些正则替换。
+
+Breakpoints 功能适合做一些临时性的修改。
+
+（1）Map 功能
+
+Charles 的 Map 功能分 Map Remote 和 Map Local 两种，
+
+Map Remote 是将指定的网络请求重定向到另一个网址请求地址，
+
+Map Local 是将指定的网络请求重定向到本地文件。
+
+在 Charles 的菜单中，选择 “Tools”–>“Map Remote” 或 “Map Local” 即可进入到相应功能的设置页面。
+
+（2）Rewrite 功能
+
+Rewrite功能适合对某一类网络请求进行一些正则替换，以达到修改结果的目的。
+可以重写接口所有元素的内容：header、host、url、path、query param、response status、body。
+
+点击Charles菜单栏Tools中的Rewrite，弹出Rewrite Settings框，勾选左上角的Enable Rewrite选项，并点击Add，左侧边框出现Untitled Set，在右侧的Name栏可以对此次的Rewrite进行重命名。
+
+在右侧Location栏点击Add，在弹出的Edit Location对话框中，填入相关参数，最后点击OK
+
+接着，在右侧Rules栏点击Add，在弹出的Rewrite Rule对话框中，填入相关参数，最后点击OK
+![]()
+
+

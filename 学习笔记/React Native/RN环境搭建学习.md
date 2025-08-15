@@ -4,7 +4,7 @@
 
 - 1.1 按照学习文档依次安装HomeBrew、Node、Yarn/NPM 、JDK11、Android Studio
 
-- 1.2 React Native CLI 安装与初始化项目：`npx react-native init YOUR-PROJECT`
+- 1.2 React Native CLI 安装与初始化项目：`npx @react-native-community/cli init YOUR-PROJECT`
 
 - 1.3 Android 环境配置（Android Studio、模拟器/真机）
 
